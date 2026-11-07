@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AOC Claim Spot Watcher</title>
+  <style>
+    body { font: 14px system-ui; width: 370px; padding: 16px; color: #17332b; background: #f5f8f5; }
+    h1 { font-size: 19px; margin: 0 0 12px; }
+    p { line-height: 1.5; }
+    button { padding: 10px 14px; border: 0; border-radius: 6px; cursor: pointer; font-weight: 600; }
+    #start { background: #166749; color: white; } #stop { background: #e5e9e7; }
+    #status { min-height: 44px; font-weight: 600; } small { color: #52655d; }
+    textarea { box-sizing: border-box; width: 100%; margin: 8px 0; padding: 10px; font: inherit; }
+    ul { padding: 0; list-style: none; } li { padding: 12px 0; border-top: 1px solid #ccd9d1; }
+    li p { margin: 5px 0; } button:disabled { opacity: .6; }
+  </style>
+</head>
+<body>
+  <h1>AOC Claim Spot Watcher</h1>
+  <p><strong>Silent checks</strong> · 0.1 seconds after each response.</p>
+  <p>Your tab stays still. A matching spot triggers one reload to verify and click.</p>
+  <p>Looking for <strong>CLAIM PASSENGER SPOT</strong> or <strong>CLAIM SPOT</strong>.</p>
+  <label for="events">Event IDs (separate with commas or new lines)</label>
+  <textarea id="events" rows="3" placeholder="6421, 6228"></textarea>
+  <button id="start">Save &amp; start all</button>
+  <button id="stop">Stop all</button>
+  <p id="status">Loading…</p>
+  <ul id="watches"></ul>
+  <p><small>Keep event tabs open. Each stops after one click. Escape stops only that page. Remove an ID and save to stop watching it. Save &amp; start all restarts stopped events. Chrome may slow checks in background tabs.</small></p>
+  <script src="popup.js"></script>
+</body>
+</html>
